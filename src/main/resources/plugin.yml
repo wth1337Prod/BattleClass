@@ -1,0 +1,176 @@
+name: BattleClass
+version: '1.0.0'
+main: me.wth.battleClass.BattleClass
+api-version: '1.21'
+description: 'Плагин для создания класса боевой пехоты с разным снаряжением'
+
+commands:
+  battleclass:
+    description: Основная команда для управления снаряжением боевой пехоты
+    usage: /battleclass [weapon|attachments|list|ammo|select|armor|helmet|boots|pants|medical|heal|injury|generate|tablet|radio]
+    aliases: [bc]
+  rank:
+    description: Команда для управления военными рангами
+    usage: /rank [set|info|list|remove]
+    aliases: [ranks, military]
+  donate:
+    description: Открыть меню донатов сервера
+    usage: /donate
+    aliases: [donat, donation]
+  r:
+    description: Команда для работы с рацией
+    usage: /r [сообщение|set <частота>|off|info|help]
+    aliases: [radio, рация]
+  mortar:
+    description: Команда для управления миномётами
+    usage: /mortar [give|list|help]
+    aliases: [миномет, мортира]
+  flamethrower:
+    description: Команда для управления огнеметами
+    usage: /flamethrower [give|list|fuel] [игрок] [тип] [количество]
+    aliases: [огнемет, flame]
+  drone:
+    description: Команда для управления боевыми дронами
+    usage: /drone [give|battery] [игрок] [тип|заряд]
+    aliases: [дрон, бпла, uav]
+
+permissions:
+  battleclass.admin:
+    description: Доступ ко всем функциям плагина
+    default: op
+    children:
+      battleclass.weapon: true
+      battleclass.attachments: true
+      battleclass.list: true
+      battleclass.ammo: true
+      battleclass.select: true
+      battleclass.armor: true
+      battleclass.helmet: true
+      battleclass.boots: true
+      battleclass.pants: true
+      battleclass.medical: true
+      battleclass.heal: true
+      battleclass.injury: true
+      battleclass.tablet: true
+      battleclass.rank.set: true
+      battleclass.rank.remove: true
+      battleclass.rank.info: true
+      battleclass.donate: true
+      battleclass.radio: true
+      battleclass.radio.command: true
+      battleclass.mortar: true
+      battleclass.mortar.give: true
+      battleclass.flamethrower: true
+      battleclass.flamethrower.give: true
+      battleclass.flamethrower.fuel: true
+      battleclass.drone: true
+      battleclass.drone.give: true
+      battleclass.drone.battery: true
+  
+  battleclass.weapon:
+    description: Доступ к получению оружия
+    default: op
+  
+  battleclass.attachments:
+    description: Доступ к получению аксессуаров для оружия
+    default: op
+  
+  battleclass.list:
+    description: Доступ к просмотру списка снаряжения
+    default: true
+  
+  battleclass.ammo:
+    description: Доступ к получению патронов
+    default: op
+  
+  battleclass.select:
+    description: Доступ к выбору типа патронов
+    default: true
+  
+  battleclass.armor:
+    description: Доступ к получению бронежилетов
+    default: op
+  
+  battleclass.helmet:
+    description: Доступ к получению шлемов
+    default: op
+  
+  battleclass.boots:
+    description: Доступ к получению ботинок
+    default: op
+  
+  battleclass.pants:
+    description: Доступ к получению штанов
+    default: op
+  
+  battleclass.medical:
+    description: Доступ к получению медицинских предметов
+    default: op
+  
+  battleclass.heal:
+    description: Доступ к исцелению игроков
+    default: op
+  
+  battleclass.injury:
+    description: Доступ к управлению травмами
+    default: op
+    
+  battleclass.tablet:
+    description: Доступ к получению военных планшетов
+    default: op
+    
+  battleclass.rank.set:
+    description: Доступ к установке военных рангов
+    default: op
+    
+  battleclass.rank.remove:
+    description: Доступ к удалению военных рангов
+    default: op
+    
+  battleclass.rank.info:
+    description: Доступ к просмотру информации о военных рангах
+    default: true
+    
+  battleclass.donate:
+    description: Доступ к открытию меню донатов
+    default: true
+    
+  battleclass.radio:
+    description: Доступ к получению радиостанций
+    default: op
+    
+  battleclass.radio.command:
+    description: Доступ к использованию команды рации
+    default: true
+    
+  battleclass.mortar:
+    description: Доступ к просмотру списка минометов
+    default: true
+    
+  battleclass.mortar.give:
+    description: Доступ к выдаче минометов
+    default: op
+
+  battleclass.flamethrower:
+    description: Доступ к просмотру списка огнеметов
+    default: true
+    
+  battleclass.flamethrower.give:
+    description: Доступ к выдаче огнеметов
+    default: op
+    
+  battleclass.flamethrower.fuel:
+    description: Доступ к выдаче топлива для огнеметов
+    default: op
+
+  battleclass.drone:
+    description: Доступ к просмотру помощи по дронам
+    default: true
+    
+  battleclass.drone.give:
+    description: Доступ к выдаче дронов
+    default: op
+    
+  battleclass.drone.battery:
+    description: Доступ к выдаче батарей для дронов
+    default: op
